@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>3D 모델 뷰어</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: #ffffff;
+    }
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+
+  <model-viewer
+    id="viewer"
+    src="hello_motion.glb"
+    alt="3D 캐릭터"
+    camera-controls
+    camera-orbit="0deg 90deg 2.5m"
+    disable-zoom
+    disable-pan
+    exposure="1"
+    shadow-intensity="1"
+    animation-name=""
+    animation-loop="false"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+  ></model-viewer>
+
+  <script>
+    const viewer = document.getElementById("viewer");
+    let isModelReady = false;
+
+    // ✅ 모델 로딩 후 애니메이션 확인
+    viewer.addEventListener("load", () => {
+      console.log("✅ 모델 로딩 완료");
+
+      setTimeout(() => {
+        const animations = viewer.availableAnimations;
+        console.log("📃 애니메이션 목록:", animations);
+
+        if (animations.includes("ArmatureAction.001")) {
+          isModelReady = true;
+        } else {
+          console.warn("⚠ 'ArmatureAction.001' 애니메이션이 없습니다.");
+        }
+      }, 300);
+    });
+
+    // ✅ 애니메이션 1회만 실행하고 끝나면 초기화
+    const playAnimationOnce = () => {
+      if (!isModelReady) {
+        console.warn("⚠ 모델 준비 안됨");
+        return;
+      }
+
+      // 초기화
+      viewer.animationName = "";
+      console.log("🧘 기본 상태 초기화");
+
+      // 약간 대기 후 실행
+      setTimeout(() => {
+        viewer.animationName = "ArmatureAction.001";
+        console.log("🎬 애니메이션 실행 시작: ArmatureAction.001");
+
+        // ✅ 명시적으로 play 호출
+        viewer.play();
+
+        // ✅ 애니메이션 종료 시 기본 포즈로 복귀
+        viewer.addEventListener(
+          "finished",
+          () => {
+            console.log("✅ 애니메이션 종료 → 기본 자세 복귀");
+            viewer.animationName = "";
+          },
+          { once: true }
+        );
+      }, 100);
+    };
+
+    // ✅ React에서 메시지 수신 시 실행
+    window.addEventListener("message", (event) => {
+      console.log("📨 메시지 수신:", event.data);
+      if (event.data === "start-animation") {
+        playAnimationOnce();
+      }
+    });
+  </script>
+
+</body>
+</html>

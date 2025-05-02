@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite
+chatbot.db
+
+# 환경변수, 인증키
+.env
+
+# 가상환경
+venv/
+backend/venv/
+frontend/node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# React 빌드
+frontend/build/
+
+# .gitignore
+frontend/public/hello_motion.glb
