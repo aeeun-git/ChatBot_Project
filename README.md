@@ -49,11 +49,14 @@ chatbot_API/
 
 1. **리포지터리 클론**
 
-   git clone https://github.com/aeeun-git/ChatBot_Project.git
-   cd ChatBot_Project
+   ```bash
+   git clone https://github.com/yourusername/LivelyAI-ChatBot.git
+   cd LivelyAI-ChatBot
+   ```
 
 2. **백엔드 설정**
 
+   ```bash
    cd backend
    python -m venv .venv
    # Windows
@@ -61,7 +64,6 @@ chatbot_API/
    # macOS/Linux
    source .venv/bin/activate
 
-   # 의존성 설치
    pip install -r requirements.txt
 
    # .env 파일 생성
@@ -70,20 +72,26 @@ chatbot_API/
 
 3. **프론트엔드 설정**
 
+   ```bash
    cd ../frontend
    npm install
+   ```
 
-5. **서버 & 클라이언트 실행**
+4. **서버 & 클라이언트 실행**
 
-   * **백엔드**
+   * **백엔드** ([http://localhost:8000](http://localhost:8000))
 
+     ```bash
      cd ../backend
      uvicorn main:app --reload
+     ```
 
-   * **프론트엔드**
+   * **프론트엔드** ([http://localhost:3000](http://localhost:3000))
 
+     ```bash
      cd ../frontend
      npm start
+     ```
 
 ---
 
@@ -138,7 +146,7 @@ chatbot_API/
 * **AI**: OpenAI GPT-3.5-turbo, HuggingFace Transformers
 * **프론트엔드**: React, CSS
 * **3D 뷰어**: HTML iframe → Unity/Blender Exported Model
-* 
+
 ---
 
 ## 📝 라이선스
