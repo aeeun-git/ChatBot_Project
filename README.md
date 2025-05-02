@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white"/>
 
 **LivelyAI ChatBot**은 FastAPI와 React를 기반으로 한 AI 대화 애플리케이션입니다.
-사용자는 버튼 클릭만으로 ‘친구체’, ‘존댓말’, ‘비즈니스’, ‘상냥한 말투’, ‘화난 말투’ 등 다양한 말투를 선택해 대화할 수 있으며,
+사용자는 버튼 클릭만으로 '친구체', '존댓말', '비즈니스', '상냥한 말투', '화난 말투' 등 다양한 말투를 선택해 대화할 수 있으며,
 백엔드에서는 OpenAI GPT 모델에 선택된 스타일을 반영한 시스템 프롬프트를 전달합니다.
 
 ---
@@ -15,11 +15,11 @@
 * **실시간 채팅**
   React 프론트엔드에서 입력 → FastAPI 백엔드로 POST → OpenAI 응답 → 화면 출력
 * **의도 분류**
-  간단한 텍스트 분류기로 결과 응답에 “인사/작별/감사/칭찬/슬픔” 등의 라벨 표시
+  간단한 텍스트 분류기로 결과 응답에 "인사/작별/감사/칭찬/슬픔" 등의 라벨 표시
 * **대화 기록 저장 & 조회**
-  SQLite/MySQL에 사용자·AI 메시지 저장, `/history` API로 전체 로그 반환
+  SQLite/MySQL에 사용자·AI 메시지 저장, '/history' API로 전체 로그 반환
 * **3D 캐릭터 연동**
-  “인사” 혹은 “작별” 의도 시 iframe 내 3D 모델 애니메이션 자동 재생
+  "인사" 혹은 "작별" 의도 시 iframe 내 3D 모델 애니메이션 자동 재생
 
 ---
 
@@ -79,14 +79,14 @@ chatbot_API/
 
 4. **서버 & 클라이언트 실행**
 
-   * **백엔드** ([http://localhost:8000](http://localhost:8000))
+   * **백엔드**
 
      ```bash
      cd ../backend
      uvicorn main:app --reload
      ```
 
-   * **프론트엔드** ([http://localhost:3000](http://localhost:3000))
+   * **프론트엔드**
 
      ```bash
      cd ../frontend
@@ -97,7 +97,7 @@ chatbot_API/
 
 ## 📡 API 명세
 
-### POST `/chat`
+### POST '/chat'
 
 * **Request Body**
 
