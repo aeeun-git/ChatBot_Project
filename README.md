@@ -1,7 +1,3 @@
-2초 동안 생각함
-
-
-```markdown
 # 🤖 ChatBot_Project
 
 <img src="https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white"/>
@@ -10,11 +6,7 @@
 사용자는 톤(친구체/존댓말/비즈니스/상냥한 말투/화난 말투)을 버튼으로 선택해 AI와 대화할 수 있으며,  
 과거 대화 기록(API) 조회, 키워드 기반 의도 분류, 3D 모델 애니메이션 연동 기능을 제공합니다.
 
----
-
 ## 📦 프로젝트 구조
-
-```
 
 chatbot\_API/
 ├── backend/                # FastAPI 서버
@@ -32,21 +24,14 @@ chatbot\_API/
 │   └── ...             # 기타 컴포넌트 및 설정 파일
 └── package.json        # Node.js dependencies
 
-````
-
----
-
 ## ⚙️ 설치 및 실행
 
 ### 1. 저장소 클론
-```bash
 git clone https://github.com/yourusername/ChatBot_Project.git
 cd ChatBot_Project
-````
 
 ### 2. 백엔드 설정
 
-```bash
 cd backend
 # 가상환경 생성 & 활성화 (선택)
 python -m venv .venv
@@ -60,34 +45,26 @@ pip install -r requirements.txt
 
 # .env 파일 생성 (.env.example 참고)
 # OPENAI_API_KEY=여러분의_OpenAI_API_키
-```
 
 ### 3. 프론트엔드 설정
 
-```bash
 cd ../frontend
 npm install
-```
 
 ### 4. 서버 & 클라이언트 실행
 
 * **백엔드** (포트 8000)
 
-  ```bash
-  cd ../backend
-  uvicorn main_9:app --reload
-  ```
+cd ../backend
+uvicorn main_9:app --reload
+
 
 * **프론트엔드** (포트 3000)
 
-  ```bash
-  cd ../frontend
-  npm start
-  ```
+cd ../frontend
+npm start
 
 브라우저에서 `http://localhost:3000` 으로 접속하세요.
-
----
 
 ## 🚀 주요 기능
 
@@ -100,9 +77,8 @@ npm install
 4. **3D 모델 연동**
    인사·작별 의도 시 `postMessage("start-animation")` 로 viewer.html 내 애니메이션 트리거
 5. **파일 로그 저장**
-   `chat_log.txt` 에 사용자·AI 대화 기록을 매 대화마다 append
+   'chat_log.txt` 에 사용자·AI 대화 기록을 매 대화마다 append
 
----
 
 ## 📡 API 명세
 
@@ -136,8 +112,6 @@ npm install
     …
   ]
   ```
-
----
 
 ## 🔑 환경 변수
 
