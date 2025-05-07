@@ -50,7 +50,7 @@ chatbot_API/
 1. **리포지터리 클론**
 
    ```bash
-   git clone https://github.com/yourusername/LivelyAI-ChatBot.git
+   git clone https://github.com/aeeun-git/LivelyAI-ChatBot.git
    cd LivelyAI-ChatBot
    ```
 
